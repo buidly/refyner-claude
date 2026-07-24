@@ -1,5 +1,6 @@
 {
   "name": "refyner",
+  "description": "Refyner plugins for Claude Code — connect your Refyner second brain to research grounded in what you've saved and capture new insights with your confirmation.",
   "owner": {
     "name": "Dragos Rebegea",
     "email": "dragos.rebegea@buidly.com"
