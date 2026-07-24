@@ -3,45 +3,57 @@
 Canonical source: https://github.com/buidly/refyner-claude
 Install: `/plugin marketplace add buidly/refyner-claude` → `/plugin install refyner@refyner`
 
-> **Note:** the details below come from web research (2026-07-24) and must be
-> re-verified immediately before any submission — star counts, submission URLs,
-> and whether each marketplace still accepts third-party plugins can change.
-> Nothing here has been submitted. Submission happens only after owner approval.
+> Details below come from a verified research pass (2026-07-24), triangulated
+> against the live Claude Code docs + GitHub API. Re-confirm URLs immediately
+> before submitting. Nothing has been submitted. Submission happens only after
+> owner approval, and outward-facing steps (forms/PRs) are done by the owner or
+> with explicit go-ahead.
 
-## Shortlist (ranked, pending approval)
+## Shortlist (ranked, verified)
 
-### 1. Anthropic official plugin directory — RECOMMENDED
-- **Repo/URL:** `anthropics/claude-plugins-official` (claimed) + submission form at
-  `clau.de/plugin-directory-submission`.
-- **Accepts third-party plugins:** Yes (100+ third-party plugins claimed).
-- **Submission method:** form-based review pipeline (NOT direct PR).
-- **Reputability:** highest if genuine — Anthropic-run. **Must verify the repo +
-  form URL are real before relying on this** (highest hallucination risk item).
-- **Recommendation:** SUBMIT first — highest trust + discovery, if verified real.
+### 1. Anthropic official community directory — SUBMIT FIRST
+- **Repo:** `anthropics/claude-plugins-community` (installed as `@claude-community`).
+  The repo is a read-only nightly-synced mirror — **do NOT open a PR** (auto-closed).
+- **Submission method:** in-app/web **FORM** — `platform.claude.com/plugins/submit`
+  (individual authors; short link `clau.de/plugin-directory-submission`), or
+  `claude.ai/admin-settings/directory/submissions/plugins/new` for Team/Enterprise orgs.
+- **Review:** runs `claude plugin validate` + automated safety screening (~days),
+  then approved plugins sync nightly into the public `marketplace.json`.
+- **Why first:** real Anthropic-run registry, surfaced in Claude Code's native
+  `/plugin` UI; the highest-trust, highest-discovery path. Requires the owner's
+  Anthropic account to submit the form.
 
-### 2. cc-marketplace (Anand Tyagi) — RECOMMENDED
-- **Repo/URL:** `ananddtyagi/cc-marketplace`; submit portal `claudecodecommands.directory/submit`.
-- **Accepts third-party plugins:** Yes (community aggregator).
-- **Submission method:** PR to their marketplace and/or the submit portal.
-- **Reputability:** established community aggregator (claimed ~685★, active).
-- **Recommendation:** SUBMIT — largest independent community marketplace.
+### 2. composio-community/awesome-claude-plugins — SUBMIT (secondary)
+- **Repo:** `composio-community/awesome-claude-plugins` (org-backed, ~1.8k★, active).
+- **Submission method:** PR — fork → add plugin entry/folder → update README →
+  open PR (per its CONTRIBUTING). Can be prepared as a ready branch.
+- **Why:** legit, active, PR-based secondary listing for extra discoverability.
 
-### 3. jimmc414/claude-code-plugin-marketplace — MAYBE
-- **Repo/URL:** `jimmc414/claude-code-plugin-marketplace`.
-- **Accepts third-party plugins:** Yes (CONTRIBUTING invites PRs; single maintainer).
-- **Submission method:** pull request per CONTRIBUTING.
-- **Reputability:** new/small (claimed ~4★). Low risk, low reach.
-- **Recommendation:** OPTIONAL — easy PR, modest discovery upside.
+### 3. anthropics/claude-plugins-official — REVISIT LATER (not submittable now)
+- Anthropic-**curated** (32k★); no application process — hand-picked, often after
+  a plugin gains traction in `claude-plugins-community`. Not a direct target;
+  revisit once `refyner` has usage.
 
-### Excluded
-- `anthropics/claude-plugins-community` — read-only mirror; PRs auto-closed (use the form).
-- `jmanhype/…`, `feed-mob/…` — single-author collections, not open aggregators.
-- `claude-market/marketplace` — minimal activity.
+### Optional / low priority
+- `ananddtyagi/cc-marketplace` — real, PR-based, but small/low-traffic. Optional.
+- `jimmc414/claude-code-plugin-marketplace` — new, ~4★. Very low reach. Optional.
+
+### Skip (not marketplaces)
+- `davila7/claude-code-templates`, `hesreallyhim/awesome-claude-code` — catalogs /
+  awesome-lists, no `.claude-plugin/marketplace.json`; not `/plugin`-installable
+  (a link/issue submission is possible but not a marketplace listing).
+
+### Security note
+A documented mid-2026 supply-chain attack via malicious marketplace plugins
+means users increasingly prefer the **screened official path** — another reason
+to lead with `claude-plugins-community`.
 
 ## Status
 
-| Marketplace | Repo / URL | Submission method | Status | Link |
+| Marketplace | Target | Submission method | Who submits | Status |
 |---|---|---|---|---|
-| Anthropic official | anthropics/claude-plugins-official | form (clau.de/plugin-directory-submission) | not submitted (pending approval + verify) | — |
-| cc-marketplace | ananddtyagi/cc-marketplace | PR / submit portal | not submitted (pending approval) | — |
-| jimmc414 marketplace | jimmc414/claude-code-plugin-marketplace | PR | not submitted (optional) | — |
+| Anthropic community directory | anthropics/claude-plugins-community | FORM (platform.claude.com/plugins/submit) | owner (Anthropic account) | not submitted |
+| composio awesome-claude-plugins | composio-community/awesome-claude-plugins | PR | prep branch → owner opens PR | not submitted |
+| Anthropic official (curated) | anthropics/claude-plugins-official | none (curated) | — | revisit after traction |
+| cc-marketplace (optional) | ananddtyagi/cc-marketplace | PR | optional | not submitted |
+| jimmc414 (optional) | jimmc414/claude-code-plugin-marketplace | PR | optional | not submitted |
