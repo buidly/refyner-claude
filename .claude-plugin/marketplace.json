@@ -1,0 +1,14 @@
+{
+  "name": "refyner",
+  "owner": {
+    "name": "Dragos Rebegea",
+    "email": "dragos.rebegea@buidly.com"
+  },
+  "plugins": [
+    {
+      "name": "refyner",
+      "source": "./",
+      "description": "Companion for your Refyner second brain — research grounded in what you've saved, plus propose→confirm capture. Requires a free Refyner account (https://refyner.me)."
+    }
+  ]
+}
